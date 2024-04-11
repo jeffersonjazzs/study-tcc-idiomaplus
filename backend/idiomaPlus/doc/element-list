@@ -1,0 +1,15 @@
+com.jeff.puc
+com.jeff.puc.config
+com.jeff.puc.domain
+com.jeff.puc.domain.enums
+com.jeff.puc.dto
+com.jeff.puc.dto.auth
+com.jeff.puc.email
+com.jeff.puc.messages
+com.jeff.puc.repositories
+com.jeff.puc.resources
+com.jeff.puc.resources.exception
+com.jeff.puc.service
+com.jeff.puc.services
+com.jeff.puc.services.exceptions
+com.jeff.puc.services.impl
