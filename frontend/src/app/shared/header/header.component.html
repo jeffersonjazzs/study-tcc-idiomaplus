@@ -1,0 +1,39 @@
+
+<mat-toolbar class="toolbar-custom">
+  <button mat-icon-button>
+    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+  </button>
+
+  <img src="https://awsbucketpucminas.s3.sa-east-1.amazonaws.com/cp3.jpg" alt="IdiomaPlus" [routerLink]="'/main'">
+  <span class="display" [routerLink]="'/main'">IdiomaPlus</span>
+  <span class="fill-remaining-space"></span>
+  <div *ngIf="!isLoggedIn$">
+    <button mat-button  (click)="login()">Login</button>
+  </div>
+  <div *ngIf="isLoggedIn$">
+    <button mat-button  (click)="onLogout()">Logout</button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list (click)="sidenav.toggle()">
+      <a mat-list-item [routerLink]="'/main'">Home</a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/cadastrostudent'"> Novo Aluno </a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/cadastroteacher'"> Novo Professor </a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/cadastroclass'"> Nova Turma</a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/cadastrouser'"> Novo Usuário</a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/students'"> Alunos </a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/teachers'"> Professores </a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/classes'"> Turmas </a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/users'"> Usuários </a>
+      <a *ngIf="isLoggedIn$" mat-list-item [routerLink]="'/main/contacts'"> Contatos </a>
+      <a mat-list-item [routerLink]="'/main/contact'"> Entre em contato </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
